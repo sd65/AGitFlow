@@ -2,7 +2,7 @@
 // http://gitgraphjs.com/
 
 var graphConfig = new GitGraph.Template({
-    colors: ["#6297ff", "#47E8D4", "#E84BA5", "#FFA657"],
+    colors: ["#6297ff", "#6297ff", "#47E8D4", "#E84BA5", "#FFA657"],
     branch: {
         color: "#000000",
         lineWidth: 3,
@@ -47,10 +47,11 @@ var config = {
 }
 
 // You can manually fix columns to control the display.
-var featureCol = 0
-var developCol = 1
-var hfCol = 2
-var masterCol = 3
+var featureColAlt = 0
+var featureCol = 1
+var developCol = 2
+var hfCol = 3
+var masterCol = 4
 
 var gitgraph = new GitGraph(config)
 
@@ -78,7 +79,7 @@ hotfix_10x.commit("Urgent Fix 2")
 var feature3 = gitgraph.branch({parentBranch:develop, name:"DEV-004-Ex4", column:featureCol})
 feature3.commit("A feature to go into 19.3.0")
 
-var feature4 = gitgraph.branch({parentBranch:develop, name:"DEV-005-Ex5", column:featureCol})
+var feature4 = gitgraph.branch({parentBranch:develop, name:"DEV-005-Ex5", column:featureColAlt})
 feature3.merge(develop)
 
 feature4.commit("A feature to go into 19.3.0")
